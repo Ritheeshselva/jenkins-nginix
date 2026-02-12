@@ -17,12 +17,13 @@ pipeline {
             }
         }
 
-        stage('Deploy Container') {
+          stage('Deploy Container') {
             steps {
                 echo 'Deploying Container...'
-                sh 'docker stop job-11 || true'
-                sh 'docker rm job-11 || true'
-                sh 'docker run -d -p 80:80 --name job-11 job-11'
+                 sh 'docker stop job-11 || true'
+                 sh 'docker rm job-11 || true'
+               
+                sh 'docker run -d -p 80:80 --name job-11 job-11'    
             }
         }
     }
